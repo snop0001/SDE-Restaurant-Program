@@ -35,7 +35,7 @@ public class DutchConversationBuilder implements ConversationBuilder {
         _conversation = "";
     }
 
-    public String getEmail() {
+    public String getConversation() {
         return _conversation;
     }
 
