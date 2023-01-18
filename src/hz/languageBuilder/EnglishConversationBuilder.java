@@ -1,34 +1,34 @@
-public class EngishConversationBuilder implements  ConversationBuilder {
+public class EnglishConversationBuilder implements ConversationBuilder {
     private String _conversation = "";
 
-    public void addressSir (String name) {
+    public void addressSir(String name) {
         _conversation += "Hello Mr." + name + "!";
-        this.addNewline();
+        this.addNewLine();
     }
 
-    public void addressMadam (String name) {
+    public void addressMadam(String name) {
         _conversation += "Hello Ms." + name + "!";
-        this.addNewline();
+        this.addNewLine();
     }
 
-    public void welcomeMessage () {
+    public void welcomeMessage() {
         _conversation += "and welcome to Pizza Pizzeria!";
-        this.addNewline();
+        this.addNewLine();
     }
 
-    public void guestsAmount (int num ) {
+    public void guestsAmount(int num) {
         _conversation += "Oh I see you are " + num + " guests today";
-        this.addNewline();
+        this.addNewLine();
     }
 
-    public void showTable () {
+    public void showTable() {
         _conversation += "Let me take you to your table";
-        this.addNewline();
+        this.addNewLine();
     }
 
-    public void showTable () {
+    public void enjoy() {
         _conversation += "Here you go! Hope you will enjoy your meal!";
-        this.addNewline();
+        this.addNewLine();
     }
 
     public void reset() {

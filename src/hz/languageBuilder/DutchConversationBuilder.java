@@ -1,49 +1,34 @@
-public class DutchConversationBuilder implements  ConversationBuilder {
+public class DutchConversationBuilder implements ConversationBuilder {
     private String _conversation = "";
 
     public void addressSir(String name) {
         _conversation += "Goedendag meneer " + name + "!";
-        this.addNewline();
+        this.addNewLine();
     }
 
     public void addressMadam(String name) {
         _conversation += "Goedendag mevrouw " + name + "!";
-        this.addNewline();
+        this.addNewLine();
     }
 
     public void welcomeMessage() {
         _conversation += "en welkom bij Pizza Pizzeria!";
-        this.addNewline();
+        this.addNewLine();
     }
 
     public void guestsAmount(int num) {
         _conversation += "Oh ik zie dat jullie met " + num + " personen zijn vandaag";
-        this.addNewline();
+        this.addNewLine();
     }
 
     public void showTable() {
         _conversation += "Laat me u naar uw tafel brengen";
-        this.addNewline();
-    }
-
-    public void enjoy() {
-        _conversation += "Geniet van uw eten!zzeria!";
-        this.addNewline();
-    }
-
-    public void guestsAmount(int num) {
-        _conversation += "Oh ik zie dat jullie met " + num + " personen zijn vandaag";
-        this.addNewline();
-    }
-
-    public void showTable() {
-        _conversation += "Laat me u naar uw tafel brengen";
-        this.addNewline();
+        this.addNewLine();
     }
 
     public void enjoy() {
         _conversation += "Geniet van uw eten!";
-        this.addNewline();
+        this.addNewLine();
     }
 
     public void reset() {
