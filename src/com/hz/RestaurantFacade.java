@@ -37,10 +37,34 @@ public class RestaurantFacade {
         // changing from idle
         this.waiter.state.customerInteraction();
         while (!(this.waiter.state instanceof IdleState)) {
-            this.waiter.customerInteraction();
-            this.waiter.kitchenInteraction();
-            this.waiter.refill(this.refill);
+            takingOrder();
+            if (this.waiter.state instanceof HasNoMorePizzasSate) {
+                noPizzas();
+            } else {
+                food();
+                review();
+            }
         }
+
+    }
+
+    public void takingOrder() {
+        this.waiter.customerInteraction();
+    }
+
+    public void noPizzas() {
+        this.waiter.customerInteraction();
+        this.waiter.refill(this.refill);
+    }
+
+    public void food() {
+        this.waiter.kitchenInteraction();
+        this.waiter.customerInteraction();
+    }
+
+    public void review() {
+        this.waiter.customerInteraction();
+        this.waiter.customerInteraction();
     }
 
 }
