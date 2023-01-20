@@ -8,6 +8,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
+
         // write your code here
         RestaurantFacade facade = new RestaurantFacade(1, "Dutch", 2);
 
