@@ -1,5 +1,7 @@
 ## _**The Pizza Restaurant Simulator**_
 
+Link to GitHub Repository: https://github.com/snop0001/SDE-Restaurant-Program
+
 ### Background Information
 
 **Developers** - Manon Mampaey (mamp0002) and Shirel Snopik (snop0001) 
