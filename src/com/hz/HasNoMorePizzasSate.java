@@ -9,12 +9,17 @@ public class HasNoMorePizzasSate implements State {
 
     @Override
     public void customerInteraction() {
-        waiter.write("Sorry we are out of pizzas at the moment, the kitchen is making more");
+        String ans = ((waiter.getLanguage() == "English")?
+                "Sorry we are out of pizzas at the moment, the kitchen is making more":
+                "Het spijt me, we hebben momenteel geen pizzas meer. De keuken is er druk mee bezig.");
+        waiter.write(ans);
     }
 
     @Override
     public void kitchenInteraction() {
-        waiter.write("Waiting for more pizzas");
+        String ans = ((waiter.getLanguage() == "English")?
+                "Waiting for more pizzas": "Wachtend op meer pizzas");
+        waiter.write(ans);
     }
 
     @Override

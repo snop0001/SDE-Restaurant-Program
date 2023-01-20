@@ -9,13 +9,18 @@ public class HasComplainState implements State {
 
     @Override
     public void customerInteraction() {
-        waiter.write("I am sorry to hear you are dissatisfied, lets give you something else");
+        String ans = ((waiter.getLanguage() == "English")?
+                "I am sorry to hear you are dissatisfied, lets give you something else": "Het spijt me dat u niet tevreden bent, we kunnen u iets anders aanbieden.");
+        waiter.write(ans);
         waiter.setState(waiter.takingOrderState());
     }
 
     @Override
     public void kitchenInteraction() {
-        waiter.write("Waiter is checking up on customers");
+        String ans = ((waiter.getLanguage() == "English")?
+                "Waiter is checking up on customers":
+                "De ober is bezig met gasten");
+        waiter.write(ans);
     }
 
     @Override

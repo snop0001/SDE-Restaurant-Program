@@ -11,12 +11,17 @@ public class HasOrderState implements State {
 
     @Override
     public void customerInteraction() {
-        waiter.write("The waiter has your order, please wait");
+        String ans = ((waiter.getLanguage() == "English")?
+                "The waiter has your order, please wait":
+                "De ober heeft uw bestelling, even geduld alstublieft.");
+        waiter.write(ans);
     }
 
     @Override
     public void kitchenInteraction() {
-        waiter.write("Hey there is a new order");
+        String ans = ((waiter.getLanguage() == "English")?
+                "Hey there is a new order":"Hey hier is een nieuwe bestelling");
+        waiter.write(ans);
         String pizzaType = waiter.getAnswer();
         if (pizzaType.contains("vegeterian")) {
             pizza = new VegeterianPizza("tomato");
@@ -31,8 +36,15 @@ public class HasOrderState implements State {
             pizza = new RegularPizza("tomato");
 
         }
-        waiter.write(pizza.serve() + " *Kitchen voices*");
-        waiter.write("Thank you I will take this to the client");
+
+        String ans2 = ((waiter.getLanguage() == "English")?
+                pizza.serve() + " *Kitchen voices*":pizza.serve() + " *Keuken geluiden*");
+        waiter.write(ans2);
+
+        String ans3 = ((waiter.getLanguage() == "English")?
+                "Thank you I will take this to the client" : "Bedankt ik zal dit naar de gast brengen");
+        waiter.write(ans3);
+
         waiter.setState(waiter.hasFoodState());
     }
 

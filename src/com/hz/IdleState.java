@@ -9,14 +9,20 @@ public class IdleState implements State {
 
     @Override
     public void customerInteraction() {
-        waiter.write("waiting for new customer");
+        String ans = ((waiter.getLanguage() == "English")?
+                "waiting for new customer":
+                "Wachtend op nieuwe gasten");
+        waiter.write(ans);
         waiter.setState(waiter.takingOrderState());
 
     }
 
     @Override
     public void kitchenInteraction() {
-        waiter.write("waiting for new costumer");
+        String ans = ((waiter.getLanguage() == "English")?
+                "waiting for new customer":
+                "Wachtend op nieuwe gasten");
+        waiter.write(ans);
     }
 
     @Override

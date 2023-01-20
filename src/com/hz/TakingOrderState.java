@@ -11,8 +11,10 @@ public class TakingOrderState implements State {
     public void customerInteraction() {
         int count = waiter.getCount();
         if (count > 0) {
-            waiter.write("What would you like to order?");
-            waiter.write("we have vegan, vegeterian, classic and whole wheat classic");
+            String ans1 = ((waiter.getLanguage() == "English")?
+                    "What would you like to order? We have vegan, vegeterian, classic and whole wheat classic":
+                    "Wat wilt u bestellen? We hebben vegan, vegetarisch, classic en volkoren classic");
+            waiter.write(ans1);
             boolean ans = waiter.readOrder();
             if (ans) {
                 waiter.setState(waiter.hasOrderState());
@@ -21,7 +23,10 @@ public class TakingOrderState implements State {
             }
 
         } else {
-            waiter.write("Sorry we are having delays in the kitchen so waiting times may be longer");
+            String ans1 = ((waiter.getLanguage() == "English")?
+                    "Sorry we are having delays in the kitchen so waiting times may be longer":
+                    "Excuses, we hebben wat vertraging in de keuken, het kan iets langer duren.");
+            waiter.write(ans1);
             waiter.setState(waiter.hasNoMorePizzasSate());
         }
     }

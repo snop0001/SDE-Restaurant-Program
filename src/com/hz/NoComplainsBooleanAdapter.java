@@ -11,7 +11,7 @@ public class NoComplainsBooleanAdapter implements BooleanAdapter {
         this.adaptee = reader;
 
         String[] positiveWords = new String[] { "no", "no thank you", "its great", "we have a great time",
-                "I love it here", "no this was the best meal ever" };
+                "I love it here", "no this was the best meal ever", "nee", "nee bedankt", "alles is prima" };
         this.truthyValues = Arrays.asList(positiveWords);
     }
 
