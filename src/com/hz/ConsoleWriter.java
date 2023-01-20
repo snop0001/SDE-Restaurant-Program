@@ -1,3 +1,5 @@
+package com.hz;
+
 public class ConsoleWriter {
 
     public void writeLine(String line) {

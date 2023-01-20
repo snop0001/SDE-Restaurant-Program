@@ -1,3 +1,5 @@
+package com.hz;
+
 public class HasFoodState implements State {
     Waiter waiter;
 
@@ -5,12 +7,19 @@ public class HasFoodState implements State {
         this.waiter = waiter;
     }
 
+    @Override
     public void customerInteraction() {
-        System.out.println("Hey, here is your food");
+        waiter.write("Hey, here is your food");
         waiter.setState(waiter.takingReviewState());
     }
 
+    @Override
     public void kitchenInteraction() {
-        System.out.println("Waiter is delivering food at the moment");
+        waiter.write("Waiter is delivering food at the moment");
+    }
+
+    @Override
+    public void refill() {
+
     }
 }
