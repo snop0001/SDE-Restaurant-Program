@@ -30,8 +30,7 @@ In short, the patterns were included as follows:
 #### Structural Patterns:
 
 1.  Adapter - The adapter pattern was included to allow the program to understand different inputs from the user and make it more flexible.
-2.  Facade -  To make the main class have just the responsibility of starting the program but not 
-3.   the functionality of the restaurant, now the main class creates a facade instance and the facade will run all the different methods in the right order.
+2.  Facade -  To make the main class have just the responsibility of starting the program but not the functionality of the restaurant, now the main class creates a facade instance and the facade will run all the different methods in the right order.
 
 #### Behavioral Patterns:
 
@@ -81,7 +80,7 @@ The adapter pattern was included in the program to allow the app to react to dif
 *   BooleanAdapter Interface, sets the method that needs to be implemented in each adapter (https://github.com/snop0001/SDE-Restaurant-Program/blob/main/src/com/hz/BooleanAdapter.java)
 *   OrderBooleanAdapter, sets the acceptable answers that will return true and, if not false. This will be used when an answer is accepted to the question of “what would you like to order”. This adapter checks if the user has chosen a food item that exists in the restaurant or not. It allows for a variety of answers. For example, if a customer wants a vegetarian pizza, both “vegetarian” and “vegetarian pizza” will be accepted as valid.   
     (https://github.com/snop0001/SDE-Restaurant-Program/blob/main/src/com/hz/OrderBooleanAdapter.java)
-*   NoComplaintsBooleanAdapter, sets the acceptable answers a user may give to the program if he has no complaints about the food or the restaurant. The adapter will return true if there are no complaints (the answer matches one of the set options) or false if there were complaints (the answer dosent match the options set). (https://github.com/snop0001/SDE-Restaurant-Program/blob/main/src/com/hz/NoComplainsBooleanAdapter.java)
+*   NoComplaintsBooleanAdapter, sets the acceptable answers a user may give to the program if he has no complaints about the food or the restaurant. The adapter will return true if there are no complaints (the answer matches one of the set options) or false if there were complaints (the answer doesn't match the options set). (https://github.com/snop0001/SDE-Restaurant-Program/blob/main/src/com/hz/NoComplainsBooleanAdapter.java)
 
 ![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/3fdf07fa0bad5f08c012b04851928697846b9568191d5ea6.png)
 
@@ -91,7 +90,7 @@ The adapter pattern was included in the program to allow the app to react to dif
 
 The facade handles the management of the restaurant :
 
-*    Configuring the restaurant according to the basic settings received from the user (as the player of the simulator, for example, language, starter amount of pizzas and so on).
+*   Configuring the restaurant according to the basic settings received from the user (as the player of the simulator, for example, language, starter amount of pizzas and so on).
 *   Configuring and initializing the conversation with the host of the restaurant
 *   Configuring the order and running the waiter states and interactions.
 
@@ -105,7 +104,13 @@ This allows for the main class to be in charge only of initializing the simulato
 
 ### State
 
-The state patterns allow the smooth transition between different stages of our simulator. In the program, the different states simulate the waiter of the restaurant, who at different steps of handling the customer will need to act differently. The stages change three different methods - interacting with the costumer, interacting with the kitchen staff and refilling the amount of pizzas.  Important to mention, the interaction language will also change according to the language chosen in the initialization of the simulator.  
+The state patterns allow the smooth transition between different stages of our simulator. In the program, the different states simulate the waiter of the restaurant, who at different steps of handling the customer will need to act differently. The stages change three different methods - interacting with the costumer, interacting with the kitchen staff and refilling the amount of pizzas.  Important to mention, the interaction language will also change according to the language chosen in the initialization of the simulator.
+
+**Flow chart of how the different states relate to each other:** 
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/0cddc0615f9043ebb7369c88226ad4c11026fe329c684391.png)
+
+  
 **The different states are:**
 
 *   Idle - when there isn't an active customer interacting with the restaurant (at the beginning and end of the simulation). (https://github.com/snop0001/SDE-Restaurant-Program/blob/main/src/com/hz/IdleState.java)
