@@ -10,6 +10,9 @@ public class HasFoodState implements State {
     @Override
     public void customerInteraction() {
         waiter.write("Hey, here is your food");
+        if (waiter.getCount() > 0) {
+            waiter.count = waiter.getCount() - 1;
+        }
         waiter.setState(waiter.takingReviewState());
     }
 

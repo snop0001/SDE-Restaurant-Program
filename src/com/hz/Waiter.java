@@ -53,7 +53,7 @@ public class Waiter {
     }
 
     public int getCount() {
-        return count;
+        return this.count;
     }
 
     public String getAnswer() {

@@ -17,7 +17,7 @@ public class TakingOrderState implements State {
             if (ans) {
                 waiter.setState(waiter.hasOrderState());
             } else {
-                waiter.write("Sorry we dont have this pizza today");
+                waiter.write("Sorry we dont have this today");
             }
 
         } else {

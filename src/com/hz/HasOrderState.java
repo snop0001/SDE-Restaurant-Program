@@ -16,7 +16,7 @@ public class HasOrderState implements State {
 
     @Override
     public void kitchenInteraction() {
-        waiter.write("Hey, here is a new order");
+        waiter.write("Hey there is a new order");
         String pizzaType = waiter.getAnswer();
         if (pizzaType.contains("vegeterian")) {
             pizza = new VegeterianPizza("tomato");
@@ -31,7 +31,7 @@ public class HasOrderState implements State {
             pizza = new RegularPizza("tomato");
 
         }
-        waiter.write("*Kitchen voices* " + pizza.serve());
+        waiter.write(pizza.serve() + " *Kitchen voices*");
         waiter.write("Thank you I will take this to the client");
         waiter.setState(waiter.hasFoodState());
     }
