@@ -1,6 +1,7 @@
 package com.hz;
 
 public interface ConversationBuilder {
+
     void addressSir(String name);
 
     void addressMadam(String name);
