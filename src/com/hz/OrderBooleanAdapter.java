@@ -13,7 +13,7 @@ public class OrderBooleanAdapter implements BooleanAdapter {
         this.adaptee = reader;
 
         String[] options = new String[] { "vegan pizza", "vegan", "vegeterian pizza", "vegeterian", "classic pizza",
-                "classic", "whole wheat pizza", "whole wheat" };
+                "classic", "whole wheat pizza", "whole wheat", "vegetarisch", "volkoren" };
         this.truthyValues = Arrays.asList(options);
     }
 

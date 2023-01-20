@@ -9,13 +9,19 @@ public class HasPaymentState implements State {
 
     @Override
     public void customerInteraction() {
-        waiter.write("Thank you, have a good evening!");
+        String ans = ((waiter.getLanguage() == "English")?
+                "Thank you, have a good evening!":
+                "Bedankt, fijne avond!");
+        waiter.write(ans);
         waiter.setState(waiter.idleState());
     }
 
     @Override
     public void kitchenInteraction() {
-        waiter.write("Waiter is busy at the moment");
+        String ans = ((waiter.getLanguage() == "English")?
+                "Waiter is busy at the moment":
+                "De ober is bezig momenteel");
+        waiter.write(ans);
     }
 
     @Override

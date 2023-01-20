@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        RestaurantFacade facade = new RestaurantFacade(1, "English", 2);
+        RestaurantFacade facade = new RestaurantFacade(1, "Dutch", 2);
 
         facade.introConversation();
         facade.waiterInteraction();

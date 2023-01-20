@@ -9,7 +9,10 @@ public class HasFoodState implements State {
 
     @Override
     public void customerInteraction() {
-        waiter.write("Hey, here is your food");
+        String ans = ((waiter.getLanguage() == "English")?
+                "Hey, here is your food":
+                "Alstublieft, uw eten");
+        waiter.write(ans);
         if (waiter.getCount() > 0) {
             waiter.count = waiter.getCount() - 1;
         }

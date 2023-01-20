@@ -15,12 +15,14 @@ public class Waiter {
     State state;
     int count = 0;
 
+    String language;
+
     ConsoleReader reader;
     ConsoleWriter writer;
     NoComplainsBooleanAdapter complaintsAdapter;
     OrderBooleanAdapter orderAdapter;
 
-    public Waiter(int pizzasAmount) {
+    public Waiter(int pizzasAmount, String language) {
 
         reader = new ConsoleReader();
         writer = new ConsoleWriter();
@@ -35,6 +37,7 @@ public class Waiter {
         takingOrderState = new TakingOrderState(this);
         takingReviewState = new TakingReviewState(this);
 
+        this.language = language;
         this.count = pizzasAmount;
         if (pizzasAmount > 0) {
             state = idleState;
@@ -55,6 +58,8 @@ public class Waiter {
     public int getCount() {
         return this.count;
     }
+
+    public String getLanguage() { return this.language; }
 
     public String getAnswer() {
         return orderAdapter.getAnswerGiven();
