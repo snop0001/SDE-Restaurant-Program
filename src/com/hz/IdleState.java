@@ -9,9 +9,9 @@ public class IdleState implements State {
 
     @Override
     public void customerInteraction() {
-        String ans = ((waiter.getLanguage() == "English")?
-                "waiting for new customer":
-                "Wachtend op nieuwe gasten");
+        String ans = ((waiter.getLanguage().equals("English"))?
+                "**Waiting for new customer**":
+                "**Wachtend op nieuwe gasten**");
         waiter.write(ans);
         waiter.setState(waiter.takingOrderState());
 
@@ -19,9 +19,9 @@ public class IdleState implements State {
 
     @Override
     public void kitchenInteraction() {
-        String ans = ((waiter.getLanguage() == "English")?
-                "waiting for new customer":
-                "Wachtend op nieuwe gasten");
+        String ans = ((waiter.getLanguage().equals("English"))?
+                "**Waiting for new customer**":
+                "**Wachtend op nieuwe gasten**");
         waiter.write(ans);
     }
 

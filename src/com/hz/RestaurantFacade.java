@@ -17,7 +17,7 @@ public class RestaurantFacade {
         this.writer = new ConsoleWriter();
         this.waiter = new Waiter(pizzas, language);
         this.refill = pizzasRefill;
-        if (language == "English") {
+        if (language.equals("English")) {
             this.builder = new EnglishConversationBuilder();
         } else {
             this.builder = new DutchConversationBuilder();
